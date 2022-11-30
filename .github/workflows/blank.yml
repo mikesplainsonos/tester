@@ -28,7 +28,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Deploy to dev
-        run: Deploy to dev
+        run: echo Deploy to dev
   test:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
@@ -42,7 +42,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Deploy to test
-        run: Deploy to test
+        run: echo Deploy to test
   prod:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
@@ -56,5 +56,5 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Deploy to test
-        run: Deploy to test
+        run: echo Deploy to test
         
