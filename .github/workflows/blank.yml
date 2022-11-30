@@ -28,7 +28,10 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Deploy to dev
-        run: echo Deploy to dev
+        run: |
+          echo Deploy to dev
+          echo "### Hello world! :rocket:" >> $GITHUB_STEP_SUMMARY
+        
   test:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
@@ -42,7 +45,9 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Deploy to test
-        run: echo Deploy to test
+        run: |
+          echo Deploy to test
+          echo "### Hello world 2! :rocket:" >> $GITHUB_STEP_SUMMARY
   prod:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
@@ -56,5 +61,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Deploy to test
-        run: echo Deploy to test
+        run: |
+          echo Deploy to test
+          echo "### Hello world! :rocket:" >> $GITHUB_STEP_SUMMARY
         
