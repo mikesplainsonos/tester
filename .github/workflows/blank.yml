@@ -63,5 +63,5 @@ jobs:
       - name: Deploy to test
         run: |
           echo Deploy to test
-          echo "### Hello world! :rocket:" >> $GITHUB_STEP_SUMMARY
+          echo "### Hello prod world! :rocket:" >> $GITHUB_STEP_SUMMARY
         
