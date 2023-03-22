@@ -1,0 +1,28 @@
+
+name: "Issue Labeler"
+on:
+  issues:
+    types: [opened, edited]
+  pull_request:
+    types: [opened, edited]
+jobs:
+  triage:
+    runs-on: ubuntu-latest
+    concurrency:
+      group: ${{ github.head_ref || github.run_id }}
+      cancel-in-progress: true
+    steps:
+    - name: Get token
+      id: get_token
+      uses: machine-learning-apps/actions-app-token@0.21
+      with:
+        APP_PEM: ${{ secrets.PDSW_DEVOPS_AUTOMATION_CERT }}
+        APP_ID: ${{ secrets.PDSW_DEVOPS_AUTOMATION_APP_ID }}
+    - uses: github/issue-labeler@v3.0 #May not be the latest version
+      with:
+        repo-token: "${{ secrets.GITHUB_TOKEN }}"
+        configuration-path: .github/labeler.yml
+        not-before: 2020-01-15T02:54:32Z
+        enable-versioned-regex: 0
+        include-title: 1
+        sync-labels: 1
