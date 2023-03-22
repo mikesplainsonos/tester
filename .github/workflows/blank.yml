@@ -30,7 +30,7 @@ jobs:
       - name: Deploy to dev
         run: |
           echo Deploy to dev
-          echo "### Hello world! :rocket:" >> $GITHUB_STEP_SUMMARY
+          echo "### Hello world! hi :rocket:" >> $GITHUB_STEP_SUMMARY
         
   test:
     # The type of runner that the job will run on
