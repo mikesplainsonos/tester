@@ -12,12 +12,6 @@ jobs:
       group: ${{ github.head_ref || github.run_id }}
       cancel-in-progress: true
     steps:
-    - name: Get token
-      id: get_token
-      uses: machine-learning-apps/actions-app-token@0.21
-      with:
-        APP_PEM: ${{ secrets.PDSW_DEVOPS_AUTOMATION_CERT }}
-        APP_ID: ${{ secrets.PDSW_DEVOPS_AUTOMATION_APP_ID }}
     - uses: github/issue-labeler@v3.0 #May not be the latest version
       with:
         repo-token: "${{ secrets.GITHUB_TOKEN }}"
